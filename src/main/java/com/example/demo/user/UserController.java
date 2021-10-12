@@ -4,6 +4,7 @@ import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.management.InvalidAttributeValueException;
 import java.util.List;
 import java.util.Optional;
 
@@ -31,7 +32,7 @@ public class UserController {
         userService.addUser(user);
     }
     @PutMapping
-    public void updateUser(@RequestBody User user) throws NotFoundException {
+    public void updateUser(@RequestBody User user) throws InvalidAttributeValueException, NotFoundException {
         userService.updateUser(user);
     }
 
