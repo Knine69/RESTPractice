@@ -22,14 +22,14 @@ public class UserService {
         return userRepository.findAll();
     }
 
-
     public Optional<User> getUser(int userId) throws NotFoundException {
         return userRepository.findById(userId);
     }
 
-    public void addUser(User user) {
+    public User addUser(User user) {
         userRepository.save(user);
         System.out.println("Add User effective.");
+        return user;
     }
 
     public void updateUser(User user) throws InvalidAttributeValueException, NotFoundException {
